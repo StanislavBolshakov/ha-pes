@@ -1,0 +1,10 @@
+{
+    "codeowners": ["@s_bolshakov"],
+    "config_flow": false,
+    "dependencies": [],
+    "documentation": "https://github.com/StanislavBolshakov",
+    "domain": "pes",
+    "name": "ПетроЭлектроСбыт",
+    "requirements": [],
+    "version": "0.0.1"
+  }
