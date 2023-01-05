@@ -5,6 +5,6 @@
     "documentation": "https://github.com/StanislavBolshakov",
     "domain": "pes",
     "name": "ПетроЭлектроСбыт",
-    "requirements": [],
-    "version": "0.0.1"
+    "version": "0.0.1",
+    "requirements": []
   }
