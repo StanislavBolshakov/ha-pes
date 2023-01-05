@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/StanislavBolshakov/ha-pes/compare/v0.1.1...v0.1.2) (2023-01-05)
+
+
+### Bug Fixes
+
+* reorder steps ([fe1c2df](https://github.com/StanislavBolshakov/ha-pes/commit/fe1c2dfc9f7c37a6f2f3f1986ea618fcb37287c4))
+
 ## [0.1.1](https://github.com/StanislavBolshakov/ha-pes/compare/v0.1.0...v0.1.1) (2023-01-05)
 
 
