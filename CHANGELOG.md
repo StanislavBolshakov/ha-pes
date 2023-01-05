@@ -1,3 +1,10 @@
+## [0.1.1](https://github.com/StanislavBolshakov/ha-pes/compare/v0.1.0...v0.1.1) (2023-01-05)
+
+
+### Bug Fixes
+
+* add execute permission ([f187b3c](https://github.com/StanislavBolshakov/ha-pes/commit/f187b3c8737274206f33c799076e9af81e39e5dd))
+
 # [0.1.0](https://github.com/StanislavBolshakov/ha-pes/compare/v0.0.1...v0.1.0) (2023-01-05)
 
 
