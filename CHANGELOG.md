@@ -1,3 +1,10 @@
+## [0.2.3](https://github.com/StanislavBolshakov/ha-pes/compare/v0.2.2...v0.2.3) (2023-01-09)
+
+
+### Bug Fixes
+
+* **pes:** accidental removal of sensor update callback ([aaea115](https://github.com/StanislavBolshakov/ha-pes/commit/aaea115c2bbef2c96cc3255b239e066d756d7918))
+
 ## [0.2.2](https://github.com/StanislavBolshakov/ha-pes/compare/v0.2.1...v0.2.2) (2023-01-09)
 
 
