@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/StanislavBolshakov/ha-pes/compare/v0.1.2...v0.2.0) (2023-01-09)
+
+
+### Features
+
+* **pes:** New Incremental Update Service ([c23f310](https://github.com/StanislavBolshakov/ha-pes/commit/c23f310d37e625ab76dd59eb97d7d9e645e39356))
+
 ## [0.1.2](https://github.com/StanislavBolshakov/ha-pes/compare/v0.1.1...v0.1.2) (2023-01-05)
 
 
