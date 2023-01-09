@@ -1,3 +1,10 @@
+## [0.2.2](https://github.com/StanislavBolshakov/ha-pes/compare/v0.2.1...v0.2.2) (2023-01-09)
+
+
+### Bug Fixes
+
+* **pes:** ensure INT as incremental update value ([b068b25](https://github.com/StanislavBolshakov/ha-pes/commit/b068b25ee58a358332f1f1589373992ca9420794))
+
 ## [0.2.1](https://github.com/StanislavBolshakov/ha-pes/compare/v0.2.0...v0.2.1) (2023-01-09)
 
 
