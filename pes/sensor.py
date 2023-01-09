@@ -119,7 +119,6 @@ class PesSensor(Entity):
         total_peak = self.attrs["day_indication"] + peak_value
         total_offpeak = self.attrs["night_indication"] + offpeak_value
         result = self.client.update_meter_counters(
-            [[total_peak, "DAY"], [total_offpeak, "NIGHT"]]
+            [[int(total_peak), "DAY"], [int(total_offpeak), "NIGHT"]]
         )
         _LOGGER.debug("Result: " + str(result))
-        self.update
