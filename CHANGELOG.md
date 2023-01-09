@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/StanislavBolshakov/ha-pes/compare/v0.2.0...v0.2.1) (2023-01-09)
+
+
+### Bug Fixes
+
+* **pes:** typo in service name ([6b35a95](https://github.com/StanislavBolshakov/ha-pes/commit/6b35a95423c2029cc40d256057d89784dd67201b))
+
 # [0.2.0](https://github.com/StanislavBolshakov/ha-pes/compare/v0.1.2...v0.2.0) (2023-01-09)
 
 
