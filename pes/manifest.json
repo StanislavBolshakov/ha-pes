@@ -5,6 +5,6 @@
     "documentation": "https://github.com/StanislavBolshakov/ha-pes/blob/main/README.md",
     "domain": "pes",
     "name": "ПетроЭлектроСбыт",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "requirements": []
   }

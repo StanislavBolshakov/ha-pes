@@ -6,7 +6,7 @@
     [
       "@semantic-release/exec", 
       {
-        "publishCmd": "./bump.sh ${nextRelease.version}"
+        "generateNotesCmd": "./bump.sh ${nextRelease.version}"
       }
     ], 
     [
