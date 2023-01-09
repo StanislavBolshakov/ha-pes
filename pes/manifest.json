@@ -1,10 +1,10 @@
 {
-    "codeowners": ["@s_bolshakov"],
+    "codeowners": ["StanislavBolshakov"],
     "config_flow": false,
     "dependencies": [],
-    "documentation": "https://github.com/StanislavBolshakov",
+    "documentation": "https://github.com/StanislavBolshakov/ha-pes/blob/main/README.md",
     "domain": "pes",
     "name": "ПетроЭлектроСбыт",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "requirements": []
   }

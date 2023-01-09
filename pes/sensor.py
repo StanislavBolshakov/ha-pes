@@ -42,14 +42,21 @@ async def async_setup_platform(
 
     platform = entity_platform.async_get_current_platform()
     platform.async_register_entity_service(
-        "indication_updater",
+        "indication_raw_updater",
         {
             vol.Required("peak_value"): cv.positive_int,
             vol.Required("offpeak_value"): cv.positive_int,
         },
-        "_send_indication",
+        "_send_raw_indication",
     )
-
+    platform.async_register_entity_service(
+        "indication_incrimental_updater",
+        {
+            vol.Required("peak_value"): cv.positive_int,
+            vol.Required("offpeak_value"): cv.positive_int,
+        },
+        "_send_incremental_indication",
+    )
 
 class PesSensor(Entity):
     def __init__(self, name: str, client: Client):
@@ -95,12 +102,24 @@ class PesSensor(Entity):
         self._state = balance
         self._available = True
 
-    def _send_indication(self, peak_value: int, offpeak_value: int):
+    def _send_raw_indication(self, peak_value: int, offpeak_value: int):
         _LOGGER.debug(
-            f"Send indication service has been triggered with peak {peak_value} and offpeak {offpeak_value} values."
+            f"Send raw indication service has been triggered with peak {peak_value} and offpeak {offpeak_value} values."
         )
         result = self.client.update_meter_counters(
             [[peak_value, "DAY"], [offpeak_value, "NIGHT"]]
+        )
+        _LOGGER.debug("Result: " + str(result))
+        self.update
+
+    def _send_incremental_indication(self, peak_value: int, offpeak_value: int):
+        _LOGGER.debug(
+            f"Send incremental indication service has been triggered with peak {peak_value} and offpeak {offpeak_value} values."
+        )
+        total_peak = self.attrs["day_indication"] + peak_value
+        total_offpeak = self.attrs["night_indication"] + offpeak_value
+        result = self.client.update_meter_counters(
+            [[total_peak, "DAY"], [total_offpeak, "NIGHT"]]
         )
         _LOGGER.debug("Result: " + str(result))
         self.update

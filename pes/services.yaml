@@ -1,7 +1,6 @@
-
-indication_updater:
-  name: Indication Updater
-  description: PetroElectroSbyt Indication Updater
+indication_raw_updater:
+  name: Indication Raw Updater
+  description: PetroElectroSbyt Raw Indication Updater
   target:
   fields:
     peak_value:
@@ -14,3 +13,18 @@ indication_updater:
       description: Energy Meter New Offpeak Value
       required: true
       example: 1240
+indication_incrimental_updater:
+  name: Indication Incremental Updater
+  description: PetroElectroSbyt Incremental Indication Updater
+  target:
+  fields:
+    peak_value:
+      name: Peak Value
+      description: Energy Meter Incremental Peak Value
+      required: true
+      example: 100
+    offpeak_value:
+      name: Offpeak Value
+      description: Energy Meter Incremental Offpeak Value
+      required: true
+      example: 50
