@@ -122,3 +122,4 @@ class PesSensor(Entity):
             [[int(total_peak), "DAY"], [int(total_offpeak), "NIGHT"]]
         )
         _LOGGER.debug("Result: " + str(result))
+        self.update
