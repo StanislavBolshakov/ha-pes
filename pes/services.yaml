@@ -1,6 +1,6 @@
 indication_raw_updater:
   name: Indication Raw Updater
-  description: PetroElectroSbyt Raw Indication Updater
+  description: PetroElectroSbyt Raw Indication Updater (publishing to PES API as is)
   target:
   fields:
     peak_value:
@@ -13,9 +13,9 @@ indication_raw_updater:
       description: Energy Meter New Offpeak Value
       required: true
       example: 1240
-indication_incrimental_updater:
+indication_incremental_updater:
   name: Indication Incremental Updater
-  description: PetroElectroSbyt Incremental Indication Updater
+  description: PetroElectroSbyt Incremental Indication Updater (publishing to PES API as current + increment)
   target:
   fields:
     peak_value:

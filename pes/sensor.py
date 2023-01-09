@@ -50,7 +50,7 @@ async def async_setup_platform(
         "_send_raw_indication",
     )
     platform.async_register_entity_service(
-        "indication_incrimental_updater",
+        "indication_incremental_updater",
         {
             vol.Required("peak_value"): cv.positive_int,
             vol.Required("offpeak_value"): cv.positive_int,
