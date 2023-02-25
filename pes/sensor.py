@@ -101,6 +101,7 @@ class PesSensor(Entity):
         self.attrs["balance"] = balance
         self._state = balance
         self._available = True
+        _LOGGER.debug(f"Update result: {data}")
 
     def _send_raw_indication(self, peak_value: int, offpeak_value: int):
         _LOGGER.debug(

@@ -22,6 +22,24 @@ sensor:
     token: "c2VjcmV0X3Rva2VuCg"
 ```
 
+### Способы получить токен
+
+1. Python script
+```python
+import requests
+
+url = 'https://ikus.pesc.ru/application/v3/auth/login'
+headers = {'accept-encoding': 'gzip', 'content-type': 'application/json', 'rs': 'ma'}
+data = '{"username":"88005553535","password":"DerPassword"}'
+response = requests.post(url, headers=headers, data=data)
+token = response.json().get('access_token')
+print (token)
+```
+
+2. DevTools 
+
+Открыть в любом браузере Developer Tools, добавить фильтр access_token и перезагрузить страницу личного кабинета.
+
 ## Сервисы
 
 Интеграция регистрирует два сервиса для каждого счетчика: ```indication_raw_updater``` и ```indication_incremental_updater``` которые позволяют отправлять как "сырые" данные в виде новых абсолютных показаний, так и, соответственно, инкрементные данные. 
