@@ -36,7 +36,7 @@ print (response.json().get('auth'))
 
 2. DevTools 
 
-Открыть в любом браузере Developer Tools и посмотреть Token в теле GET запросов. 
+Открыть в любом браузере Developer Tools и в личном кабинете посмотреть Bearer Token в хедерах GET запросов.
 
 ## Сервисы
 

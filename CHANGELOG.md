@@ -4,6 +4,7 @@
 ### Features
 
 * **pes:** trigger release ([5a20a84](https://github.com/StanislavBolshakov/ha-pes/commit/5a20a84b74123b79890236f36b68fd6cc511a694))
+* **pes:** adjust API endpoint after update, adjust README, handling auth error due to outdated token ([358794e](https://github.com/StanislavBolshakov/ha-pes/commit/358794e00c8aef42bfb6f84dd2c06ca5e20306e1))
 
 ## [0.2.3](https://github.com/StanislavBolshakov/ha-pes/compare/v0.2.2...v0.2.3) (2023-01-09)
 
