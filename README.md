@@ -28,17 +28,15 @@ sensor:
 ```python
 import requests
 
-url = 'https://ikus.pesc.ru/application/v3/auth/login'
-headers = {'accept-encoding': 'gzip', 'content-type': 'application/json', 'rs': 'ma'}
-data = '{"username":"88005553535","password":"DerPassword"}'
-response = requests.post(url, headers=headers, data=data)
-token = response.json().get('access_token')
-print (token)
+headers = {'Accept': 'application/json, text/plain, */*', 'Captcha': 'none','Content-Type': 'application/json',}
+data = {'type': 'PHONE', 'login': '88005553535', 'password': 'DerPassword',}
+response = requests.post('https://ikus.pesc.ru/api/v6/users/auth', headers=headers, json=data)
+print (response.json().get('auth'))
 ```
 
 2. DevTools 
 
-Открыть в любом браузере Developer Tools, добавить фильтр access_token и перезагрузить страницу личного кабинета.
+Открыть в любом браузере Developer Tools и посмотреть Token в теле GET запросов. 
 
 ## Сервисы
 
