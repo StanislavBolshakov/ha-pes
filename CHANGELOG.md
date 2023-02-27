@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/StanislavBolshakov/ha-pes/compare/v0.2.3...v0.3.0) (2023-02-27)
+
+
+### Features
+
+* **pes:** trigger release ([5a20a84](https://github.com/StanislavBolshakov/ha-pes/commit/5a20a84b74123b79890236f36b68fd6cc511a694))
+
 ## [0.2.3](https://github.com/StanislavBolshakov/ha-pes/compare/v0.2.2...v0.2.3) (2023-01-09)
 
 
