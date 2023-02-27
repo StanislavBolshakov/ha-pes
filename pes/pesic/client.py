@@ -25,7 +25,7 @@ class RestClient:
             self.base_url = 'https://ikus.pesc.ru/api'
 
         if token is None:
-            raise MissingArgumentError('Token must be supplied')
+            raise MissingArgumentError('The authentication token must be supplied')
         
         self.session = requests.session()
         self.session.mount('https://', TLSAdapter())
