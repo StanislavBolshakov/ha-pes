@@ -31,7 +31,7 @@ class RestClient:
         self.session.mount('https://', TLSAdapter())
 
     def get(self, url):
-        header = {'Authorization': 'Bearer ' + self.token, 'rs': 'ma'}
+        header = {'Authorization': 'Bearer ' + self.token}
         response = self.session.get(self.base_url + url, headers=header)
 
         if type(response.json()) == dict and response.json().get('code') == '5':
