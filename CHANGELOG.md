@@ -1,3 +1,10 @@
+## [0.3.2](https://github.com/StanislavBolshakov/ha-pes/compare/v0.3.1...v0.3.2) (2023-03-25)
+
+
+### Bug Fixes
+
+* **pes:** remove mobile client attribute from POST header ([65ee518](https://github.com/StanislavBolshakov/ha-pes/commit/65ee518b5c64730bda50cda657f0bc3de89052e8))
+
 ## [0.3.1](https://github.com/StanislavBolshakov/ha-pes/compare/v0.3.0...v0.3.1) (2023-03-25)
 
 
