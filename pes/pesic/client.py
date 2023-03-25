@@ -43,8 +43,7 @@ class RestClient:
         header = {
             'accept-encoding': 'gzip',
             'Authorization': 'Bearer ' + self.token,
-            'content-type': 'application/json',
-            'rs': 'ma'
+            'content-type': 'application/json'
         }
         response = self.session.post(self.base_url + url, headers=header, data=json.dumps(data))
         try:
