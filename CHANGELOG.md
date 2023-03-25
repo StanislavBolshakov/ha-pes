@@ -1,3 +1,10 @@
+## [0.3.1](https://github.com/StanislavBolshakov/ha-pes/compare/v0.3.0...v0.3.1) (2023-03-25)
+
+
+### Bug Fixes
+
+* **pes:** remove mobile client attribute from headers ([ba8bc79](https://github.com/StanislavBolshakov/ha-pes/commit/ba8bc793fd2b92ca2de4f8877e32a6df5fbce8a6))
+
 # [0.3.0](https://github.com/StanislavBolshakov/ha-pes/compare/v0.2.3...v0.3.0) (2023-02-27)
 
 
