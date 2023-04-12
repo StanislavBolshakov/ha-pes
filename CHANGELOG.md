@@ -1,3 +1,10 @@
+## [0.4.2](https://github.com/StanislavBolshakov/ha-pes/compare/v0.4.1...v0.4.2) (2023-04-12)
+
+
+### Bug Fixes
+
+* **pes:** fix ha retry decorator deprecated ([75f4c0f](https://github.com/StanislavBolshakov/ha-pes/commit/75f4c0fde12266b53760b7d1aa3be6d6386918a0))
+
 ## [0.4.1](https://github.com/StanislavBolshakov/ha-pes/compare/v0.4.0...v0.4.1) (2023-04-12)
 
 
