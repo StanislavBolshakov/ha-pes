@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/StanislavBolshakov/ha-pes/compare/v0.4.0...v0.4.1) (2023-04-12)
+
+
+### Bug Fixes
+
+* **pes:** enable platform setup retry flow in case PES api wasn't aviable after reboot ([d98a359](https://github.com/StanislavBolshakov/ha-pes/commit/d98a35955401bc0b81dd0195c258756bdc0e8778))
+
 # [0.4.0](https://github.com/StanislavBolshakov/ha-pes/compare/v0.3.2...v0.4.0) (2023-04-12)
 
 
