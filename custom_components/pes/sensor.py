@@ -27,7 +27,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 
 SCAN_INTERVAL = timedelta(minutes=5)
 
-@retry((Exception,), tries=48, delay=30*60)
+
 async def async_setup_platform(
     hass: HomeAssistant,
     config: ConfigType,
@@ -35,30 +35,42 @@ async def async_setup_platform(
     discovery_info: DiscoveryInfoType | None = None,
 ) -> None:
     """Set up the sensor platform."""
+    tries = 0
+    max_tries = 6
     _LOGGER.debug(config)
 
-    name = config[CONF_NAME]
-    token = config[CONF_TOKEN]
-    client = Client(token)
-    add_entities([PesSensor(name, client)], update_before_add=True)
+    while tries < max_tries:
+        try:
+            with async_timeout.timeout(60*10):
+                name = config[CONF_NAME]
+                token = config[CONF_TOKEN]
+                client = Client(token)
+                add_entities([PesSensor(name, client)], update_before_add=True)
 
-    platform = entity_platform.async_get_current_platform()
-    platform.async_register_entity_service(
-        "indication_raw_updater",
-        {
-            vol.Required("peak_value"): cv.positive_int,
-            vol.Required("offpeak_value"): cv.positive_int,
-        },
-        "_send_raw_indication",
-    )
-    platform.async_register_entity_service(
-        "indication_incremental_updater",
-        {
-            vol.Required("peak_value"): cv.positive_int,
-            vol.Required("offpeak_value"): cv.positive_int,
-        },
-        "_send_incremental_indication",
-    )
+                platform = entity_platform.async_get_current_platform()
+                platform.async_register_entity_service(
+                    "indication_raw_updater",
+                    {
+                        vol.Required("peak_value"): cv.positive_int,
+                        vol.Required("offpeak_value"): cv.positive_int,
+                    },
+                    "_send_raw_indication",
+                )
+                platform.async_register_entity_service(
+                    "indication_incremental_updater",
+                    {
+                        vol.Required("peak_value"): cv.positive_int,
+                        vol.Required("offpeak_value"): cv.positive_int,
+                    },
+                    "_send_incremental_indication",
+                )
+                return True
+        except Exception as e:
+            tries += 1
+            if tries == max_tries:
+                _LOGGER.error("Failed to set up custom component after %s tries", tries)
+                return False
+            _LOGGER.warning("Failed to set up custom component on try %s: %s", tries, e)
 
 class PesSensor(Entity):
     def __init__(self, name: str, client: Client):
