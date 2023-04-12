@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/StanislavBolshakov/ha-pes/compare/v0.3.2...v0.4.0) (2023-04-12)
+
+
+### Features
+
+* **pes:** adjust directory structure to be HACS compliant ([795abb9](https://github.com/StanislavBolshakov/ha-pes/commit/795abb914cd2b3b755ef0d1a7ddccb2777fae068))
+
 ## [0.3.2](https://github.com/StanislavBolshakov/ha-pes/compare/v0.3.1...v0.3.2) (2023-03-25)
 
 
