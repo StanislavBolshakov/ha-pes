@@ -8,6 +8,8 @@ from homeassistant.helpers import config_validation as cv, entity_platform, serv
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 from homeassistant.components.sensor import Entity, PLATFORM_SCHEMA
 from homeassistant.const import CONF_NAME, CONF_TOKEN
+from homeassistant.util import retry
+
 import voluptuous as vol
 import logging
 from .pesic.wrapper import Client
@@ -25,7 +27,7 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
 
 SCAN_INTERVAL = timedelta(minutes=5)
 
-
+@retry((Exception,), tries=48, delay=30*60)
 async def async_setup_platform(
     hass: HomeAssistant,
     config: ConfigType,
