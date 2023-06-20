@@ -1,3 +1,10 @@
+## [0.4.3](https://github.com/StanislavBolshakov/ha-pes/compare/v0.4.2...v0.4.3) (2023-04-12)
+
+
+### Bug Fixes
+
+* **pes:** add logic to handle faulty updates ([065d256](https://github.com/StanislavBolshakov/ha-pes/commit/065d256791181a1ec0082b58ae237efa32b95196))
+
 ## [0.4.2](https://github.com/StanislavBolshakov/ha-pes/compare/v0.4.1...v0.4.2) (2023-04-12)
 
 
