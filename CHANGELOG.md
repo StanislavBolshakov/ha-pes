@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/StanislavBolshakov/ha-pes/compare/v0.4.3...v0.5.0) (2023-06-20)
+
+
+### Features
+
+* **pes:** workaround short token expiration time ([7324025](https://github.com/StanislavBolshakov/ha-pes/commit/7324025b2acc211b2464baaf73318ac314815655))
+
 ## [0.4.3](https://github.com/StanislavBolshakov/ha-pes/compare/v0.4.2...v0.4.3) (2023-04-12)
 
 
