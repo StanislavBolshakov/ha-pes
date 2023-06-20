@@ -7,7 +7,7 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers import config_validation as cv, entity_platform, service
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 from homeassistant.components.sensor import Entity, PLATFORM_SCHEMA
-from homeassistant.const import CONF_NAME, CONF_TOKEN
+from homeassistant.const import CONF_NAME, CONF_USERNAME, CONF_PASSWORD
 
 import voluptuous as vol
 import logging
@@ -19,7 +19,8 @@ _LOGGER.setLevel(LOG_LEVEL)
 
 PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     {
-        vol.Required(CONF_TOKEN): cv.string,
+        vol.Required(CONF_USERNAME): cv.string,
+        vol.Required(CONF_PASSWORD): cv.string,
         vol.Optional(CONF_NAME, default=DEFAULT_NAME): cv.string,
     }
 )
@@ -37,9 +38,10 @@ async def async_setup_platform(
     _LOGGER.debug(config)
 
     name = config[CONF_NAME]
-    token = config[CONF_TOKEN]
-    client = Client(token)
-    add_entities([PesSensor(name, client)], update_before_add=False)
+    username = config[CONF_USERNAME]
+    password = config[CONF_PASSWORD]
+    client = Client(username=username, password=password)
+    add_entities([PesSensor(name, client)], update_before_add=True)
 
     platform = entity_platform.async_get_current_platform()
     platform.async_register_entity_service(

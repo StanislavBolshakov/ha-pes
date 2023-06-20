@@ -12,31 +12,15 @@
 ## Установка
 
 1. В HACS добавить [пользовательский репозиторий](https://hacs.xyz/docs/faq/custom_repositories/)
-2. Создать сенсор с токеном аутентификации 
+2. Создать сенсор с именем пользователя от личного кабинета и паролем
 
 ### Пример конфигурации YAML
 ```yaml
 sensor:
   - platform: pes
-    name: "PES"
-    token: "c2VjcmV0X3Rva2VuCg"
+    username: "+88005553535"
+    password: "LegchePozvonitCheckUkogotoZanimat"
 ```
-
-### Способы получить токен
-
-1. Python script
-```python
-import requests
-
-headers = {'Accept': 'application/json, text/plain, */*', 'Captcha': 'none','Content-Type': 'application/json',}
-data = {'type': 'PHONE', 'login': '88005553535', 'password': 'DerPassword',}
-response = requests.post('https://ikus.pesc.ru/api/v6/users/auth', headers=headers, json=data)
-print (response.json().get('auth'))
-```
-
-2. DevTools 
-
-Открыть в любом браузере Developer Tools и в личном кабинете посмотреть Bearer Token в хедерах GET запросов.
 
 ## Сервисы
 
