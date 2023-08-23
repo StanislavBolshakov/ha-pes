@@ -1,5 +1,9 @@
-from pesic.custom_exceptions import MissingArgumentError, UnsupportedMeterType, UnsupportedArgumentError
-from pesic.client import RestClient
+from .custom_exceptions import (
+    MissingArgumentError,
+    UnsupportedMeterType,
+    UnsupportedArgumentError,
+)
+from .client import RestClient
 
 
 class Client:
