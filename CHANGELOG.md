@@ -1,3 +1,10 @@
+## [0.5.3](https://github.com/StanislavBolshakov/ha-pes/compare/v0.5.2...v0.5.3) (2023-08-23)
+
+
+### Bug Fixes
+
+* **ha-pes:** fix async platform setup errors ([dde389e](https://github.com/StanislavBolshakov/ha-pes/commit/dde389ef5a2b1921c4c17b9e54d04d4b40427187))
+
 ## [0.5.2](https://github.com/StanislavBolshakov/ha-pes/compare/v0.5.1...v0.5.2) (2023-08-23)
 
 
