@@ -1,3 +1,10 @@
+## [0.5.1](https://github.com/StanislavBolshakov/ha-pes/compare/v0.5.0...v0.5.1) (2023-08-23)
+
+
+### Bug Fixes
+
+* **ha-pes:** fix import RestClient ([17b95dd](https://github.com/StanislavBolshakov/ha-pes/commit/17b95dd2c2119411e8718abb3516b77372d29c95))
+
 # [0.5.0](https://github.com/StanislavBolshakov/ha-pes/compare/v0.4.3...v0.5.0) (2023-06-20)
 
 
