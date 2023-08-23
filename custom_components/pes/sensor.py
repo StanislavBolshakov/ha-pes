@@ -12,7 +12,7 @@ from homeassistant.const import CONF_NAME, CONF_USERNAME, CONF_PASSWORD
 import voluptuous as vol
 import logging
 from .pesic.wrapper import Client
-from .const import DEFAULT_NAME, LOG_LEVEL
+from .const import DEFAULT_NAME, LOG_LEVEL, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 _LOGGER.setLevel(LOG_LEVEL)
@@ -25,17 +25,23 @@ PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend(
     }
 )
 
+SERVICE_SCHEMA = vol.Schema(
+    {
+        vol.Required("peak_value"): cv.positive_int,
+        vol.Required("offpeak_value"): cv.positive_int,
+    }
+)
+
 SCAN_INTERVAL = timedelta(minutes=5)
 
-async def async_setup_platform(
+def setup_platform(
     hass: HomeAssistant,
     config: ConfigType,
     add_entities: AddEntitiesCallback,
     discovery_info: DiscoveryInfoType | None = None,
 ) -> None:
-    """Set up the sensor platform."""
-
-    _LOGGER.debug(config)
+    
+    _LOGGER.debug(f"Setting up {DOMAIN} with {config}")
 
     name = config[CONF_NAME]
     username = config[CONF_USERNAME]
@@ -76,7 +82,7 @@ class PesSensor(Entity):
         _LOGGER.debug("Sensor update triggered")
 
         if not self.attrs["account_id"]:
-            self.attrs["account_id"] = self.client.get_accounts()[0].get("accountId")
+             self.attrs["account_id"] = self.client.get_accounts()[0].get("accountId")
 
         data = self.client.get_account_data(self.attrs["account_id"])
         if data.get('errors'):
@@ -92,25 +98,3 @@ class PesSensor(Entity):
             self.attrs["balance"] = balance
             self._state = balance
             self._available = True
-
-    def _send_raw_indication(self, peak_value: int, offpeak_value: int):
-        _LOGGER.debug(
-            f"Send raw indication service has been triggered with peak {peak_value} and offpeak {offpeak_value} values."
-        )
-        result = self.client.update_meter_counters(
-            [[peak_value, "DAY"], [offpeak_value, "NIGHT"]]
-        )
-        _LOGGER.debug("Result: " + str(result))
-        self.update
-
-    def _send_incremental_indication(self, peak_value: int, offpeak_value: int):
-        _LOGGER.debug(
-            f"Send incremental indication service has been triggered with peak {peak_value} and offpeak {offpeak_value} values."
-        )
-        total_peak = self.attrs["day_indication"] + peak_value
-        total_offpeak = self.attrs["night_indication"] + offpeak_value
-        result = self.client.update_meter_counters(
-            [[int(total_peak), "DAY"], [int(total_offpeak), "NIGHT"]]
-        )
-        _LOGGER.debug("Result: " + str(result))
-        self.update
