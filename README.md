@@ -21,7 +21,3 @@ sensor:
     username: "+88005553535"
     password: "LegchePozvonitCheckUkogotoZanimat"
 ```
-
-## Сервисы
-
-Интеграция регистрирует два сервиса для каждого счетчика: ```indication_raw_updater``` и ```indication_incremental_updater``` которые позволяют отправлять как "сырые" данные в виде новых абсолютных показаний, так и, соответственно, инкрементные данные. 
