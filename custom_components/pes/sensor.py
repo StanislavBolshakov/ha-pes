@@ -43,24 +43,6 @@ async def async_setup_platform(
     client = Client(username=username, password=password)
     add_entities([PesSensor(name, client)], update_before_add=True)
 
-    platform = entity_platform.async_get_current_platform()
-    platform.async_register_entity_service(
-        "indication_raw_updater",
-        {
-            vol.Required("peak_value"): cv.positive_int,
-            vol.Required("offpeak_value"): cv.positive_int,
-        },
-        "_send_raw_indication",
-    )
-    platform.async_register_entity_service(
-        "indication_incremental_updater",
-        {
-            vol.Required("peak_value"): cv.positive_int,
-            vol.Required("offpeak_value"): cv.positive_int,
-        },
-        "_send_incremental_indication",
-    )
-
 class PesSensor(Entity):
     def __init__(self, name: str, client: Client):
         super().__init__()
