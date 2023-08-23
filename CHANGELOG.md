@@ -1,3 +1,11 @@
+## [0.5.2](https://github.com/StanislavBolshakov/ha-pes/compare/v0.5.1...v0.5.2) (2023-08-23)
+
+
+### Bug Fixes
+
+* **ha-pes:** removed service due to asyncio failure ([820aebf](https://github.com/StanislavBolshakov/ha-pes/commit/820aebf95aee8be15b6bb787065c1a0856756934))
+* **ha-pes:** removed service due to asyncio failure ([849b8ed](https://github.com/StanislavBolshakov/ha-pes/commit/849b8eded155ab3414d20bb08accba3dd94c1140))
+
 ## [0.5.1](https://github.com/StanislavBolshakov/ha-pes/compare/v0.5.0...v0.5.1) (2023-08-23)
 
 
